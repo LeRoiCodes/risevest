@@ -1,10 +1,10 @@
 
-const User = require('../models/User');
+const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 
  
     
-export const register = async (req, res) => {
+const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const existingUser = await User.findOne({ email });
@@ -22,8 +22,7 @@ export const register = async (req, res) => {
 };
 
 
-    
-export const login = async (req, res) => {
+const login = async (req, res) => {
     try {
       const { email, password } = req.body;
       const user = await User.findOne({ email });
@@ -41,3 +40,7 @@ export const login = async (req, res) => {
   };
   
   
+module.exports = {
+  register, 
+  login,
+}

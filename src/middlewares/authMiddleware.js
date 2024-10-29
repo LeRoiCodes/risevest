@@ -16,4 +16,4 @@ const jwt = require('jsonwebtoken');
 };
 
 
-export default authMiddleware
+module.exports = authMiddleware

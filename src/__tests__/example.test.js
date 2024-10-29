@@ -3,8 +3,8 @@ const app = require('../index'); // Make sure this points to your app
 
 describe('GET /', () => {
   it('should return a Hello, World! message', async () => {
-    const res = await request(app).get('/');
+    const res = await request(app).get('/api/users');
     expect(res.statusCode).toEqual(200);
-    expect(res.text).toBe('Hello, World!');
+    expect(res.text).toBe('userRoute');
   });
 });

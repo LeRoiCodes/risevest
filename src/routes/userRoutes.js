@@ -7,6 +7,10 @@ const {getUser} = require("../controllers/userController")
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    res.send('userRoute')
+})
+
 router.post('/register', register)
 router.post('/login', login )
 router.get('/profile', authMiddleware, getUser)
